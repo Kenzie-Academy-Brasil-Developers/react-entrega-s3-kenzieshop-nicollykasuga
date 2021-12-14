@@ -12,15 +12,15 @@ function ProductList() {
 
   const dispatch = useDispatch();
 
-  const products = useSelector(store => store.products);
+  const products = useSelector(store => store.product);
+  const cart = useSelector(store => store.cart);
+
   return (
     <>
       <NavBar>
         <h1>Kenzieshop</h1>
         <div>
-          {products.length > 0 && (
-            <div className="count_cart">{products.length}</div>
-          )}
+          {cart.length > 0 && <div className="count_cart">{cart.length}</div>}
           <button onClick={() => history.push("/cart")}>
             <AiOutlineShoppingCart className="icon" />
             Carrinho
